@@ -1,0 +1,25 @@
+{
+  "name": "nova-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevebasford/nova-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevebasford/nova-kit/issues"
+  },
+  "homepage": "https://github.com/stevebasford/nova-kit#readme",
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  }
+}
