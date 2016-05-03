@@ -36,13 +36,13 @@ gulp.task('default', gulp.series('build'));
 var processors = [
   precss,
   autoprefixer({browsers: ['last 2 versions']}),
-  css nano,
+  cssnano,
 ];
 function css() {
   return gulp.src(paths.css)
     .pipe(postcss(processors))
     .pipe(gulp.dest('build/css'));
-});
+};
 
 // Images
 function images() {
@@ -53,5 +53,5 @@ function images() {
 
 // Clean
 function clean(done) {
-  del(['build'], done)
+  return del(['build/**/*'], done)
 };

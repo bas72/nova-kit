@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "gulp": "./node_modules/gulp/bin/gulp.js"
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/stevebasford/nova-kit#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "cssnano": "^3.5.2",
+    "del": "^2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
-    "postcss": "^5.0.21"
+    "gulp-imagemin": "^2.4.0",
+    "gulp-postcss": "^6.1.1",
+    "postcss": "^5.0.21",
+    "precss": "^1.4.0"
   }
 }
