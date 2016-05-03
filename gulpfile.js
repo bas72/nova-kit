@@ -1,4 +1,7 @@
 var gulp = require('gulp');
+// html
+var pug          = require('gulp-pug');
+var data         = require('gulp-data');
 // css
 var postcss      = require('gulp-postcss');
 var precss       = require('precss');
@@ -13,6 +16,7 @@ var del          = require('del');
 
 // - - - Paths - - - //
 var paths = {
+  html: 'src/html/**/*.pug',
   css: 'src/css/**/*.css', // Will need a rule hear for ignoring partials
   images: 'src/img/**/*'
 };
@@ -23,7 +27,7 @@ var paths = {
 // cli
 gulp.task('build', gulp.series(
   clean,
-  gulp.parallel(css, images)
+  gulp.parallel(template, styles, images)
 ));
 
 // Default
@@ -32,13 +36,22 @@ gulp.task('default', gulp.series('build'));
 
 // - - - Functions - - - //
 
+// html
+function template () {
+  return gulp.src(paths.html)
+    .pipe(pug({
+      pretty:true
+    }))
+    .pipe(gulp.dest('build'))
+};
+
 // css
 var processors = [
   precss,
   autoprefixer({browsers: ['last 2 versions']}),
   cssnano,
 ];
-function css() {
+function styles() {
   return gulp.src(paths.css)
     .pipe(postcss(processors))
     .pipe(gulp.dest('build/css'));
